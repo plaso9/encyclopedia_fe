@@ -7,12 +7,12 @@ import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SharedModule
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
