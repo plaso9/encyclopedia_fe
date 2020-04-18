@@ -6,15 +6,8 @@ import { ArgumentComponent } from './components/argument/argument.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    component: HomeComponent
-  },
-  {
-    path: 'argument',
-    component: ArgumentComponent
-  }
+  { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: 'argument', component: ArgumentComponent }
 ];
 
 @NgModule({
