@@ -7,11 +7,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  userObj = [];
+  userObj = {
+    name: '',
+    email: '',
+  };
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8000/auth').subscribe((data: any[]) =>{
+    this.http.get('http://localhost:8000/auth').subscribe((data: {name:string, email: string}) => {
       this.userObj = data;
     });
   }
