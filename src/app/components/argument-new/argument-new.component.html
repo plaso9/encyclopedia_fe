@@ -1,16 +1,16 @@
 <h1>New Argument</h1>
-<form>
+<form (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="argument-title">Title</label>
-    <input type="text" class="form-control" id="argument-title" placeholder="Argument title">
+    <input type="text" class="form-control" id="argument-title" name="argumentTitle" placeholder="Argument title" [(ngModel)]="argumentTitle">
   </div>
   <div class="form-group">
     <label for="argument-tag">Tag</label>
-    <input type="text" class="form-control" id="argument-tag" placeholder="Argument tag">
+    <input type="text" class="form-control" id="argument-tag" name="argumentTag" placeholder="Argument tag">
   </div>
   <div class="form-group">
     <label for="argument-description">Description</label>
-    <textarea class="form-control" id="argument-description" rows="5"></textarea>
+    <textarea class="form-control" id="argument-description" name="argumentDescription" rows="5" [(ngModel)]="argumentDescription"></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Inserisci</button>
 </form>
