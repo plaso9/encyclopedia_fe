@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 import { ArgumentNewService } from './argument-new.service';
@@ -11,18 +11,29 @@ import { ArgumentNewService } from './argument-new.service';
 })
 export class ArgumentNewComponent implements OnInit {
 
-  argumentTitle: string;
-  argumentDescription: string;
+  insertForm: FormGroup;
+  submitted = false;
 
-  constructor(private as: ArgumentNewService) { }
+  constructor(private as: ArgumentNewService, private formbuilder: FormBuilder) { }
 
   ngOnInit(): void {
-  }
-
-  onSubmit() {
-    this.as.addArgument(this.argumentTitle, this.argumentDescription).subscribe((data) => {
-      // console.log("Arguent added");
+    this.insertForm = this.formbuilder.group({
+      argumentTitle: ['', [Validators.required]],
+      argumentDescription: ['', [Validators.required]],
     });
   }
+  get title() { return this.insertForm.get('argumentTitle'); }
+  get description() { return this.insertForm.get('argumentDescription'); }
 
+  onReset() {
+    this.submitted = false;
+    this.insertForm.reset();
+  }
+  onSubmit() {
+    this.submitted = true;
+    if (this.insertForm.invalid) return;
+    this.as.addArgument(this.insertForm.value).subscribe((data) => {
+      console.log("Arguent added");
+    });
+  }
 }

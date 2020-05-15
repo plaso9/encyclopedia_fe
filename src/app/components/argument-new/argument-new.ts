@@ -3,9 +3,9 @@ export class ArgumentNew {
   title: string;
   description: string;
 
-  constructor(title, description){
+  constructor(argumentJson){
     this.id = "not set";
-    this.title = title;
-    this.description = description;
+    this.title = argumentJson.argumentTitle;
+    this.description = argumentJson.argumentDescription;
   }
 }

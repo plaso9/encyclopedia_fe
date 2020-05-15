@@ -16,8 +16,8 @@ export class ArgumentNewService {
   constructor(private http: HttpClient) {
   }
 
-  addArgument(title, description): Observable<ArgumentNew> {
-    const newArgument = new ArgumentNew(title, description);
+  addArgument(argumentJson): Observable<ArgumentNew> {
+    const newArgument = new ArgumentNew(argumentJson);
     return this.http.post<ArgumentNew>(this.serverApi + "/argument", newArgument);
   }
 }

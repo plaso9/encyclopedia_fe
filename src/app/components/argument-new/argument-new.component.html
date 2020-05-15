@@ -1,16 +1,27 @@
 <h1>New Argument</h1>
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="insertForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="argument-title">Title</label>
-    <input type="text" class="form-control" id="argument-title" name="argumentTitle" placeholder="Argument title" [(ngModel)]="argumentTitle">
+    <input type="text" class="form-control" id="argument-title" formControlName="argumentTitle" [ngClass]="{ 'is-invalid': submitted && title.errors }" />
+    <div *ngIf="submitted && title.errors" class="invalid-feedback">
+        <div *ngIf="title.errors.required">Title is required</div>
+    </div>
   </div>
   <div class="form-group">
     <label for="argument-tag">Tag</label>
-    <input type="text" class="form-control" id="argument-tag" name="argumentTag" placeholder="Argument tag">
+    <input type="text" class="form-control" id="argument-tag" name="argumentTag">
   </div>
   <div class="form-group">
     <label for="argument-description">Description</label>
-    <textarea class="form-control" id="argument-description" name="argumentDescription" rows="5" [(ngModel)]="argumentDescription"></textarea>
+    <textarea class="form-control" id="argument-description" rows="5" formControlName="argumentDescription" [ngClass]="{ 'is-invalid': submitted && description.errors }"></textarea>
+    <div *ngIf="submitted && description.errors" class="invalid-feedback">
+        <div *ngIf="description.errors.required">Description is required</div>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary">Inserisci</button>
+
+  <div class="text-center">
+    <button class="btn btn-primary mr-1">Register</button>
+    <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+  </div>
+
 </form>

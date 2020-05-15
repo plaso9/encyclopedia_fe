@@ -18,13 +18,12 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
   ],
   exports: [
     HomeComponent,
     ArgumentComponent,
-    ArgumentNewComponent
+    ArgumentNewComponent,
   ]
 })
 export class ComponentsModule { }
