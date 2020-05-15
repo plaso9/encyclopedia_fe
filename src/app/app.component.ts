@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
       <div class="container-fluid h-100">
         <div class="row flex-xl-nowrap h-100">
         <div class="col-md-2 col-xl-2 bd-sidebar bg-light border-right"><app-sidebar></app-sidebar></div>
-        <div class="col-md-10 col-xl-10 bd-sidebar bg-light border-right"><router-outlet></router-outlet></div>
+        <div class="col-md-10 col-xl-10 bd-sidebar bg-light border-right">
+          <div class="col-md-12 col-xl-12 bg-dark"><app-header></app-header></div>
+          <router-outlet></router-outlet>
+        </div>
         </div>
       </div>
     `,
