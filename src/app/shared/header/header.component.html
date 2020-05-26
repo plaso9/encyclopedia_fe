@@ -1,9 +1,9 @@
 <div class="col-12 p-3">
-  <form class="form-inline">
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <div class="input-group w-100">
-      <input type="text" class="form-control" placeholder="Cerca un argomento">
+      <input type="text" class="form-control" placeholder="Cerca un argomento" formControlName="argumentSearch" >
       <div class="input-group-append">
-        <button class="btn btn-primary" type="button">Cerca</button>
+        <button class="btn btn-primary">Cerca</button>
       </div>
     </div>
   </form>

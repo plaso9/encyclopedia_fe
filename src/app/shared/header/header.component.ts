@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+
+import { ArgumentService } from 'src/app/commons/argument/argument.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  searchForm: FormGroup;
 
-  constructor() { }
+  constructor(private formbuilder: FormBuilder, private argument: ArgumentService) { }
 
   ngOnInit(): void {
+    this.searchForm = this.formbuilder.group({
+      argumentSearch: ['', [Validators.required]],
+    });
+  }
+
+  onSubmit() {
+    this.argument.search(this.searchForm.value).subscribe((data) => {
+      console.log("On submit done!");
+    });
   }
 
 }
