@@ -20,9 +20,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onSubmit() {
-    this.argument.search(this.searchForm.value).subscribe((data) => {
-      console.log("On submit done!");
-    });
+    this.argument.search(this.searchForm.value);
   }
 
 }
