@@ -5,5 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ConstantsService {
 
+  readonly baseAppUrl: string = 'http://localhost:8000/';
+  readonly baseApiUrl: string = 'http://localhost:8000/api/';
+
   constructor() { }
 }
