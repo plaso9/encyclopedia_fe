@@ -6,13 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { ArgumentNewComponent } from './argument-new/argument-new.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ArgumentListComponent } from './argument-list/argument-list.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     ArgumentComponent,
-    ArgumentNewComponent
+    ArgumentNewComponent,
+    ArgumentListComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ArgumentComponent,
     ArgumentNewComponent,
+    ArgumentListComponent
   ]
 })
 export class ComponentsModule { }
