@@ -1,1 +1,22 @@
-<p>argument-list works!</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Tags</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let argument of argumentObj">
+    <tr>
+      <th scope="row">{{ argument.id }}</th>
+      <td><p class="mb-1">{{ argument.title }}</p></td>
+      <td><p class="mb-1">{{ argument.description }}</p></td>
+      <td>
+        <span class="badge badge-primary badge-pill">hack</span>
+        <span class="badge badge-primary badge-pill">hack</span>
+        <span class="badge badge-primary badge-pill">hack</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

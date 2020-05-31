@@ -23,4 +23,8 @@ export class ArgumentService {
       return;
     }
   }
+
+  getAllArgument(){
+    return this.http.get<Argument>(this._constant.baseApiUrl + 'argument');
+  }
 }
