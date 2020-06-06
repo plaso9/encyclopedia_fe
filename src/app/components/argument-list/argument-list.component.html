@@ -17,8 +17,8 @@
       <th scope="col">Tags</th>
     </tr>
   </thead>
-  <tbody *ngFor="let argument of argumentObj">
-    <tr>
+  <tbody>
+    <tr *ngFor="let argument of argumentObj" routerLink="/argument/{{argument.id}}">
       <th scope="row">{{ argument.id }}</th>
       <td><p class="mb-1">{{ argument.title }}</p></td>
       <td><p class="mb-1">{{ argument.description }}</p></td>

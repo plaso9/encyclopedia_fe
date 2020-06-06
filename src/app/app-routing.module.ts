@@ -8,7 +8,7 @@ import { ArgumentListComponent } from './components/argument-list/argument-list.
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
-  { path: 'argument', component: ArgumentComponent },
+  { path: 'argument/:id', component: ArgumentComponent },
   { path: 'argument-new', component: ArgumentNewComponent },
   { path: 'arguments', component: ArgumentListComponent },
 ];
