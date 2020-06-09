@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Argument } from './argument';
 import { ConstantsService } from '../constants/constants.service';
 
@@ -10,6 +11,16 @@ import { ConstantsService } from '../constants/constants.service';
 export class ArgumentService {
 
   constructor(private http: HttpClient, private _constant: ConstantsService) { }
+
+  addArgument(argumentJson): Observable<Argument> {
+    const newArgument = new Argument(argumentJson);
+    return this.http.post<Argument>(this._constant.baseApiUrl + "argument", newArgument);
+  }
+
+  editArgument(argumentJson, id): Observable<Argument> {
+    const newArgument = new Argument(argumentJson);
+    return this.http.post<Argument>(this._constant.baseApiUrl + "argument/" + id + "/update", newArgument);
+  }
 
   search(argumentJson){
     var urlParams = "";

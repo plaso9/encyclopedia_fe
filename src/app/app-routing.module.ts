@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'argument/:id', component: ArgumentComponent },
   { path: 'argument-new', component: ArgumentNewComponent },
+  { path: 'argument/:id/update', component: ArgumentNewComponent },
   { path: 'arguments', component: ArgumentListComponent },
 ];
 
