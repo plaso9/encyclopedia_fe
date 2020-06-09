@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ArgumentNewService } from './argument-new.service';
 import { ArgumentService } from 'src/app/commons/argument/argument.service';
 import { Argument } from 'src/app/commons/argument/argument';
 
